@@ -4,11 +4,22 @@
 }
 
 .calc-section {
-  max-width: 70%;
+  padding: 10px;
 }
 
 .calc-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  border: 1px solid green;
+}
+
+.calc-display {
+  width: 100%;
+  height: 30px;
+  border: 1px solid red;
+}
+
+.calc-button {
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+  border: 1px solid blue;
 }
