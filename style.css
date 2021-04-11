@@ -5,16 +5,17 @@
 
 .calc-section {
   padding: 10px;
-}
-
-.calc-container {
-  border: 1px solid green;
+  width: 700px;
 }
 
 .calc-display {
   width: 100%;
   height: 30px;
   border: 1px solid red;
+}
+
+.calc-buttons-container {
+  border: 1px solid green;
 }
 
 .calc-button {

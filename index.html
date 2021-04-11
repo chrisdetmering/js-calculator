@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="shortcut icon" href="#">
   <title>JS Calculator - Victor Velasquez</title>
 </head>
 
@@ -16,32 +17,29 @@
   </header>
 
   <section class="calc-section">
-    <form class="calc-container">
-      <input id="calc-display" type="number" class="calc-display"></input>
+    <div id="calc-display" type="text" class="calc-display"></div>
 
+    <div id="calc-buttons-container" class="calc-buttons-container">
       <input id="clear" class="calc-button" type="reset" value="CE"></input>
       <input type="button" class="calc-button"></input>
       <input id="inputide" class="calc-button" type="button" value="/"></input>
       <input id="multiply" class="calc-button" type="button" value="X"></input>
-
-      <input id="four" class="calc-button" type="button" value="7"></input>
-      <input id="four" class="calc-button" type="button" value="8"></input>
-      <input id="four" class="calc-button" type="button" value="9"></input>
       <input id="four" class="calc-button" type="button" value="-"></input>
-
-      <input id="four" class="calc-button" type="button" value="4"></input>
-      <input id="five" class="calc-button" type="button" value="5"></input>
-      <input id="six" class="calc-button" type="button" value="6"></input>
       <input id="plus" class="calc-button" type="button" value="+"></input>
+      <input id="dot" class="calc-button" type="button" value="."></input>
+      <input id="equals" class="calc-button" type="button" value="="></input>
 
       <input id="one" class="calc-button" type="button" value="1"></input>
       <input id="two" class="calc-button" type="button" value="2"></input>
       <input id="three" class="calc-button" type="button" value="3"></input>
-
+      <input id="four" class="calc-button" type="button" value="4"></input>
+      <input id="five" class="calc-button" type="button" value="5"></input>
+      <input id="six" class="calc-button" type="button" value="6"></input>
+      <input id="four" class="calc-button" type="button" value="7"></input>
+      <input id="four" class="calc-button" type="button" value="8"></input>
+      <input id="four" class="calc-button" type="button" value="9"></input>
       <input id="zero" class="calc-button" type="button" value="0"></input>
-      <input id="dot" class="calc-button" type="button" value="."></input>
-      <input id="equals" class="calc-button" type="submit" value="="></input>
-    </form>
+    </div>
   </section>
 
   <script src="./js/script.js"></script>

@@ -15,37 +15,20 @@
 //         Press the add button again (result should show as 3 on the screen)
 //   - Pressing the clear button resets screen to 0
 
-class CalculationMachine {
-  constructor(userStartingNumber) {
-    this.userStartingNumber = userStartingNumber;
-  }
+const calcDisplay = document.getElementById("calc-display");
 
-  multiply(multiplier, ...theArgs) {
-    return theArgs.map((element) => {
-      return multiplier * element;
-    });
-  }
-}
+const addNumbers = (...nums) => {
+  console.log(
+    nums.reduce((acc, currValue) => {
+      return acc + currValue;
+    })
+  );
+};
 
-let calc = new CalculationMachine(2);
-console.log(calc.multiply(2, 2, 3, 4));
+const checkButtonClick = document.getElementById("calc-buttons-container");
+checkButtonClick.addEventListener("click", (e) => {
+  console.log(e.target.value);
+  calcDisplay.innerText = e.target.value;
+});
 
-// const adding = (adder, ...theArgs) => {
-//   return theArgs.map((element) => {
-//     return adder + element;
-//   });
-// }
-
-// const multiply = (multiplier, ...theArgs) => {
-// 	return theArgs.map((element) => {
-// 		return multiplier * element;
-// 	});
-// }
-
-// user clicks on a number button
-// and it is stored in an array
-
-// once the user clicks "="
-// the array is used to perform the
-// operation using the stored numbers
-// from the array. (using the spread operator)
+// TODO: Look into REST, research more on eventhandlers
