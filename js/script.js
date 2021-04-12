@@ -15,6 +15,8 @@
 //         Press the add button again (result should show as 3 on the screen)
 //   - Pressing the clear button resets screen to 0
 
+const print = (text, output) => console.log(`${text}: ${output}`);
+
 const calcDisplay = document.getElementById("calc-display");
 
 const addNumbers = (...nums) => {
@@ -25,10 +27,31 @@ const addNumbers = (...nums) => {
   );
 };
 
-const checkButtonClick = document.getElementById("calc-buttons-container");
-checkButtonClick.addEventListener("click", (e) => {
-  console.log(e.target.value);
-  calcDisplay.innerText = e.target.value;
-});
+const numbers = [];
 
-// TODO: Look into REST, research more on eventhandlers
+const initiateCalculation = (e) => {
+  const buttonValue = e.target.value;
+
+  if (
+    buttonValue !== undefined &&
+    buttonValue !== "+" &&
+    buttonValue !== "-" &&
+    buttonValue !== "X" &&
+    buttonValue !== "/" &&
+    buttonValue !== "CE" &&
+    buttonValue !== "="
+  ) {
+    print("Button clicked", buttonValue);
+    calcDisplay.innerText = e.target.value;
+    numbers.push(parseInt(buttonValue));
+    print("Numbers Array", numbers);
+  } else if (buttonValue === "=") {
+    const add = numbers[0] + numbers[1];
+    print("Add", add);
+    calcDisplay.innerText = add;
+  }
+};
+
+const checkButtonClick = document
+  .getElementById("calc-buttons-container")
+  .addEventListener("click", initiateCalculation);
