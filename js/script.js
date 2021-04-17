@@ -21,10 +21,10 @@ document.querySelectorAll('#number-button-container').forEach((button) => {
 document.querySelectorAll('#math-operator-container').forEach((button) => {
 	button.addEventListener('click', (e) => {
 		const buttonValue = e.target.textContent;
-
+		debugger;
 		numberStorageArray.push(parseInt(calcDisplay.innerText));
 
-		if (buttonValue !== '=') {
+		if (buttonValue !== '=' && buttonValue !== 'CE') {
 			currentOperator = buttonValue;
 		}
 
@@ -33,28 +33,26 @@ document.querySelectorAll('#math-operator-container').forEach((button) => {
 });
 
 document.getElementById('clear').addEventListener('click', (e) => {
-	numberStorageArray = [];
+	numberStorageArray.splice(0, numberStorageArray.length);
+	for (const number of numberStorageArray) {
+		numberStorageArray.pop(number);
+	}
 });
 
 const displayNumbers = (numberValue) => (calcDisplay.innerText += numberValue);
 
 const beginCalculation = (operator) => {
 	calcDisplay.innerText = '';
-	const removeLastNumber = () => numberStorageArray.pop();
 
 	if (operator === '=') {
 		if (currentOperator === '+') {
 			calcDisplay.innerText = numberStorageArray.reduce((a, b) => a + b);
-			removeLastNumber();
 		} else if (currentOperator === '-') {
 			calcDisplay.innerText = numberStorageArray.reduce((a, b) => a - b);
-			removeLastNumber();
 		} else if (currentOperator === 'X') {
 			calcDisplay.innerText = numberStorageArray.reduce((a, b) => a * b);
-			removeLastNumber();
 		} else if (currentOperator === '/') {
 			calcDisplay.innerText = numberStorageArray.reduce((a, b) => a / b);
-			removeLastNumber();
 		}
 	}
 };
