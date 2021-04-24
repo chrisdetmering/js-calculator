@@ -7,20 +7,23 @@ const calcDisplay = document.getElementById('calc-display');
 document.querySelectorAll('#number-button-container').forEach(button => {
 	button.addEventListener('click', e => {
 		const buttonValue = e.target.textContent;
-		calcDisplay.innerText = 0;
-		// calcDisplay.innerText = null;
+
 		displayUserNumber(buttonValue);
 	});
 });
 
-const displayUserNumber = numberValue => (calcDisplay.innerText += numberValue);
+const displayUserNumber = numberValue => {
+	if ((calcDisplay.innerText = '0')) {
+		calcDisplay.innerText = null;
+	}
+
+	calcDisplay.innerText += numberValue;
+};
 
 // -- Listens to Math Operators
 document.querySelectorAll('#math-operator-container').forEach(button => {
 	button.addEventListener('click', e => {
 		const buttonValue = e.target.textContent;
-
-		// debugger;
 
 		// -- Checks the Number Storage Array to decide whether to store the
 		// number from the display into the array or replace the array
