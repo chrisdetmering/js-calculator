@@ -1,15 +1,18 @@
-const calcDisplay = document.getElementById('calc-display');
-
 let numberStorageArray = [];
 let currentOperator = null;
 
+const calcDisplay = document.getElementById('calc-display');
+
+// -- Listens to Number Buttons
 document.querySelectorAll('#number-button-container').forEach((button) => {
 	button.addEventListener('click', (e) => {
+		calcDisplay.innerText = null;
 		const buttonValue = e.target.textContent;
 		displayNumbers(buttonValue);
 	});
 });
 
+// -- Listens to Math Operators
 document.querySelectorAll('#math-operator-container').forEach((button) => {
 	button.addEventListener('click', (e) => {
 		const buttonValue = e.target.textContent;
@@ -36,10 +39,6 @@ document.querySelectorAll('#math-operator-container').forEach((button) => {
 	});
 });
 
-const displayNumbers = (numberValue) => (calcDisplay.innerText += numberValue);
-
-const clearDisplay = () => (calcDisplay.innerText = '');
-
 const calculate = () => {
 	switch (currentOperator) {
 		case '+':
@@ -62,5 +61,31 @@ const calculate = () => {
 			break;
 	}
 };
+
+const displayNumbers = (numberValue) => (calcDisplay.innerText += numberValue);
+const clearDisplay = () => (calcDisplay.innerText = '0');
+
+// const calculate = () => {
+// 	switch (currentOperator) {
+// 		case '+':
+// 			return (calcDisplay.innerText =
+// 				parseFloat(numberStorageArray[0]) +
+// 				parseFloat(numberStorageArray[1]));
+// 		case '-':
+// 			return (calcDisplay.innerText =
+// 				parseFloat(numberStorageArray[1]) -
+// 				parseFloat(numberStorageArray[0]));
+// 		case 'X':
+// 			return (calcDisplay.innerText =
+// 				parseFloat(numberStorageArray[0]) *
+// 				parseFloat(numberStorageArray[1]));
+// 		case '/':
+// 			return (calcDisplay.innerText =
+// 				parseFloat(numberStorageArray[1]) /
+// 				parseFloat(numberStorageArray[0]));
+// 		default:
+// 			break;
+// 	}
+// };
 
 const clearArray = () => (numberStorageArray.length = 0);
