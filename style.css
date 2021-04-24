@@ -20,17 +20,17 @@ h3 {
 .calc-section {
 	width: 500px;
 	margin: 30px auto;
-	background-color: burlywood;
+	background-color: rgb(187, 180, 170);
 	border-radius: 5px;
-	border: 3px solid rgb(122, 102, 75);
+	border: 3px solid rgb(90, 75, 56);
 }
 
 .calc-display {
 	height: 60px;
-	background-color: rgb(56, 56, 56);
+	background-color: rgb(66, 66, 66);
 	color: #eee;
-	padding: 27px 30px 0 0;
-	font-size: 30px;
+	padding: 10px 10px;
+	font-size: 50px;
 	text-align: end;
 	text-justify: auto;
 }
@@ -44,25 +44,25 @@ h3 {
 }
 
 #math-operator-container > button {
-	background-color: rgb(35, 114, 223);
+	background-color: rgb(206, 127, 24);
 }
 
 #math-operator-container > button:hover {
-	background-color: rgb(125, 171, 236);
+	background-color: rgb(126, 82, 25);
 }
 
 .calc-button {
-	width: 70px;
-	height: 50px;
-	font-size: 18px;
+	width: 60px;
+	height: 45px;
+	font-size: 23px;
 	margin: 2px;
 	color: #eee;
-	border: 1px solid rgb(56, 56, 56);
-	background-color: rgb(20, 174, 188);
+	border: 1px solid rgb(35, 47, 58);
+	background-color: rgb(26, 138, 148);
 	border-radius: 5px;
 	cursor: pointer;
 }
 
 .calc-button:hover {
-	background-color: rgb(35, 114, 223);
+	background-color: rgb(29, 91, 102);
 }
