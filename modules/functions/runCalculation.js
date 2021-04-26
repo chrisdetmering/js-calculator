@@ -1,7 +1,11 @@
-import { numberStorageArray } from './numberStorageArray.js';
+import {
+	numberStorageArray,
+	display,
+	storeCurrentOperator,
+} from './functions.js';
 
-export const runCalculation = (mathOperand, display) => {
-	switch (mathOperand) {
+export const runCalculation = storeCurrentOperator => {
+	switch (storeCurrentOperator) {
 		case '+':
 			return (display.innerText =
 				parseFloat(numberStorageArray[0]) + parseFloat(numberStorageArray[1]));
