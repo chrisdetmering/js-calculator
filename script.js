@@ -28,8 +28,8 @@ document.querySelectorAll('#math-operands-container').forEach(button => {
 			const calcFunctionValue = e.target.textContent;
 
 			if (calcFunctionValue === '=') {
-				storeNumber(display.innerText);
-				display.innerText = runCalculation(currentOperator, display);
+				// storeNumber(display.innerText);
+				runCalculation();
 			} else if (calcFunctionValue === 'CE') {
 				resetDisplay();
 			} else {

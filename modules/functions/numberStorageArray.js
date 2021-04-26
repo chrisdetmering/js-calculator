@@ -1,20 +1,14 @@
-import {
-	clearArrayData,
-	display,
-	runCalculation,
-	storeCurrentOperator,
-} from './functions.js';
-// import { storeCurrentOperator } from './storeCurrentOperator.js';
+import { clearArrayData, display, runCalculation } from './functions.js';
 
 export let numberStorageArray = [];
 
-export const storeNumber = calcFunctionValue => {
+export const storeNumber = () => {
 	if (numberStorageArray.length < 2) {
 		numberStorageArray.push(parseFloat(display.innerText));
 	}
 
 	if (numberStorageArray.length >= 2) {
-		const quickCalc = runCalculation(storeCurrentOperator(calcFunctionValue));
+		const quickCalc = runCalculation();
 
 		display.innerText = quickCalc;
 

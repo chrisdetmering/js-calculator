@@ -1,11 +1,11 @@
 import {
 	numberStorageArray,
 	display,
-	storeCurrentOperator,
+	storeCurrentOperator as currentOperator,
 } from './functions.js';
 
-export const runCalculation = storeCurrentOperator => {
-	switch (storeCurrentOperator) {
+export const runCalculation = () => {
+	switch (currentOperator) {
 		case '+':
 			return (display.innerText =
 				parseFloat(numberStorageArray[0]) + parseFloat(numberStorageArray[1]));
