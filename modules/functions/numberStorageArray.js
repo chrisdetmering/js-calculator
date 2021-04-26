@@ -1,4 +1,10 @@
-import { clearArrayData, display, runCalculation } from './functions.js';
+import {
+	clearArrayData,
+	display,
+	runCalculation,
+	storeCurrentOperator,
+} from './functions.js';
+// import { storeCurrentOperator } from './storeCurrentOperator.js';
 
 export let numberStorageArray = [];
 
@@ -8,16 +14,21 @@ export const storeNumber = calcFunctionValue => {
 	}
 
 	if (numberStorageArray.length >= 2) {
-		const quickCalc = runCalculation(
-			calcFunctionValue,
-			numberStorageArray,
-			display
-		);
+		if (calcFunctionValue === NaN) {
+			const quickCalc = runCalculation(storeCurrentOperator(calcFunctionValue));
 
-		display.innerText = quickCalc;
+			display.innerText = quickCalc;
 
-		clearArrayData();
+			clearArrayData();
 
-		numberStorageArray.push(quickCalc);
+			numberStorageArray.push(quickCalc);
+		}
+		// const quickCalc = runCalculation(storeCurrentOperator(calcFunctionValue));
+
+		// display.innerText = quickCalc;
+
+		// clearArrayData();
+
+		// numberStorageArray.push(quickCalc);
 	}
 };
