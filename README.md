@@ -2,7 +2,7 @@
 
 A calculator made in vanilla JavaScript.
 
-[Start doing some math!](https://victorinspace.github.io/js-calculator/).
+[Click here to do some maths!](https://victorinspace.github.io/js-calculator/)
 
 ![](https://github.com/victorinspace/js-calculator/blob/main/screenshot-01.png)
 
