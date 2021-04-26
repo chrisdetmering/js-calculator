@@ -14,21 +14,12 @@ export const storeNumber = calcFunctionValue => {
 	}
 
 	if (numberStorageArray.length >= 2) {
-		if (calcFunctionValue === NaN) {
-			const quickCalc = runCalculation(storeCurrentOperator(calcFunctionValue));
+		const quickCalc = runCalculation(storeCurrentOperator(calcFunctionValue));
 
-			display.innerText = quickCalc;
+		display.innerText = quickCalc;
 
-			clearArrayData();
+		clearArrayData();
 
-			numberStorageArray.push(quickCalc);
-		}
-		// const quickCalc = runCalculation(storeCurrentOperator(calcFunctionValue));
-
-		// display.innerText = quickCalc;
-
-		// clearArrayData();
-
-		// numberStorageArray.push(quickCalc);
+		numberStorageArray.push(quickCalc);
 	}
 };
