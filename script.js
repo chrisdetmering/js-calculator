@@ -5,7 +5,7 @@ import {
 	display,
 	resetDisplay,
 	displayUserInputNumbers,
-} from '/modules/functions/functions.js';
+} from './modules/functions/functions.js';
 
 // -- Number Buttons -- //
 document.querySelectorAll('#number-button-container').forEach(button => {
