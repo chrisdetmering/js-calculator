@@ -1,42 +1,36 @@
 import {
-	storeNumber,
+	calculate,
+	setNumber,
 	clearArrayData,
 	storeCurrentOperator,
-	display,
 	resetDisplay,
-	displayUserInputNumbers,
+	setDisplay, 
+	setFirstNumberToResult
 } from './modules/functions/functions.js';
 
-// -- Number Buttons -- //
-document.querySelectorAll('#number-button-container').forEach(button => {
-	button.addEventListener('click', e => {
-		e.preventDefault();
-
-		if (e.target.value !== undefined) {
-			displayUserInputNumbers(e);
-		}
-	});
+document.querySelector('#number-button-container')
+.addEventListener('click', e => {
+		const number = e.target.textContent;
+		setNumber(number);
+		setDisplay();
 });
 
-// -- Math Operators -- //
-document.querySelectorAll('#math-operands-container').forEach(button => {
-	button.addEventListener('click', e => {
-		e.preventDefault();
+document.querySelector('#math-operands-container')
+.addEventListener('click', e => {
+		const operation = e.target.textContent;
 
-		if (e.target.value !== undefined) {
-			const calcFunctionValue = e.target.textContent;
-
-			if (calcFunctionValue === '=') {
-				if (display.innerText !== null || display.innerText !== '0') {
-					storeNumber(display.innerText);
-				}
-			} else if (calcFunctionValue === 'CE') {
-				resetDisplay();
-				clearArrayData();
-			} else {
-				storeCurrentOperator(calcFunctionValue);
-				storeNumber(display.innerText);
-			}
-		}
-	});
+		if (operation === '=') {
+			const result = calculate();
+			setDisplay(result);
+			setFirstNumberToResult(result);
+			return; 
+		} 
+		
+		if (operation === 'CE') {
+			resetDisplay();
+			clearArrayData();
+			return; 
+		} 
+		
+		storeCurrentOperator(operation);
 });

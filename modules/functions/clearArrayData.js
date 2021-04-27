@@ -1,3 +1,3 @@
-import { numberStorageArray } from './functions.js';
+import { numbers } from './functions.js';
 
-export const clearArrayData = () => (numberStorageArray.length = 0);
+export const clearArrayData = () => (numbers.length = 0);

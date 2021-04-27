@@ -1,12 +1,16 @@
-export { runCalculation } from './runCalculation.js';
+export { calculate } from './runCalculation.js';
 export {
 	storeCurrentOperator,
+	setCurrentOperandToNull,
 	currentOperand,
 } from './storeCurrentOperator.js';
 export { clearArrayData } from './clearArrayData.js';
-export { storeNumber, numberStorageArray } from './numberStorageArray.js';
+export { setNumber, numbers } from './numberStorageArray.js';
 export {
 	display,
 	resetDisplay,
-	displayUserInputNumbers,
+	setDisplay
 } from '../calculatorDisplay.js';
+export { setFirstNumberToResult } from './setFirstNumberToResult.js';
+
+

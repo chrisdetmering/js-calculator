@@ -1,20 +1,14 @@
-import { numberStorageArray, display, currentOperand } from './functions.js';
+import { numbers, currentOperand } from './functions.js';
 
-export const runCalculation = () => {
+export const calculate = () => {
 	switch (currentOperand) {
 		case '+':
-			return (display.innerText =
-				parseFloat(numberStorageArray[0]) + parseFloat(numberStorageArray[1]));
+			return parseFloat(numbers[0]) + parseFloat(numbers[1]);
 		case '-':
-			return (display.innerText =
-				parseFloat(numberStorageArray[1]) - parseFloat(numberStorageArray[0]));
+			return parseFloat(numbers[0]) - parseFloat(numbers[1]);
 		case 'X':
-			return (display.innerText =
-				parseFloat(numberStorageArray[0]) * parseFloat(numberStorageArray[1]));
+			return parseFloat(numbers[0]) * parseFloat(numbers[1]);
 		case '/':
-			return (display.innerText =
-				parseFloat(numberStorageArray[1]) / parseFloat(numberStorageArray[0]));
-		default:
-			break;
+			return parseFloat(numbers[0]) / parseFloat(numbers[1]);
 	}
 };

@@ -1,17 +1,23 @@
-import { clearArrayData, display, runCalculation } from './functions.js';
+import { currentOperand } from './functions.js';
 
-export let numberStorageArray = [];
+export const numbers = [];
 
-export const storeNumber = () => {
-	if (numberStorageArray.length < 2) {
-		numberStorageArray.push(parseFloat(display.innerText));
+export const setNumber = number => {
+	if (!currentOperand && numbers.length === 0) {
+		numbers.push(number);
+		return; 
 	}
 
-	if (numberStorageArray.length > 1) {
-		const quickCalc = runCalculation();
-
-		display.innerText = quickCalc;
-
-		clearArrayData();
+	if (!currentOperand) {
+		numbers[0] += number; 
+		return; 
 	}
+
+	if (currentOperand && numbers.length === 1) {
+		numbers.push(number); 
+		return; 
+	} else {
+		numbers[1] += number; 
+	}
+
 };

@@ -1,4 +1,4 @@
-import { numberStorageArray } from './functions/functions.js';
+import { numbers, currentOperand } from './functions/functions.js';
 
 export const display = document.getElementById('calc-display');
 
@@ -6,18 +6,21 @@ export const resetDisplay = () => {
 	display.innerText = '0';
 };
 
-export const displayUserInputNumbers = e => {
-	const numberButtonValue = e.target.textContent;
+export const setDisplay = (result = null) => {
 
-	if (display.innerText === '0') {
-		display.innerText = '';
+	if (result) {
+		display.textContent = result; 
+		return; 
 	}
 
-	if (numberStorageArray.length >= 1) {
-		if (display.innerText == numberStorageArray[0]) {
-			display.innerText = '';
-		}
+	if (!currentOperand) {
+		display.textContent = numbers[0];
+		return; 
 	}
 
-	display.innerText += numberButtonValue;
+	debugger; 
+	if (currentOperand && numbers.length === 2) {
+		display.textContent = numbers[1];
+	}
+
 };
