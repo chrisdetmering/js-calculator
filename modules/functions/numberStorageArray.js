@@ -7,13 +7,11 @@ export const storeNumber = () => {
 		numberStorageArray.push(parseFloat(display.innerText));
 	}
 
-	if (numberStorageArray.length >= 2) {
+	if (numberStorageArray.length > 1) {
 		const quickCalc = runCalculation();
 
 		display.innerText = quickCalc;
 
 		clearArrayData();
-
-		numberStorageArray.push(quickCalc);
 	}
 };

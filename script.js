@@ -1,7 +1,7 @@
 import {
 	storeNumber,
-	storeCurrentOperator as currentOperator,
-	runCalculation,
+	clearArrayData,
+	storeCurrentOperator,
 	display,
 	resetDisplay,
 	displayUserInputNumbers,
@@ -28,12 +28,15 @@ document.querySelectorAll('#math-operands-container').forEach(button => {
 			const calcFunctionValue = e.target.textContent;
 
 			if (calcFunctionValue === '=') {
-				// storeNumber(display.innerText);
-				runCalculation();
+				if (display.innerText !== null || display.innerText !== '0') {
+					storeNumber(display.innerText);
+				}
 			} else if (calcFunctionValue === 'CE') {
 				resetDisplay();
+				clearArrayData();
 			} else {
-				storeNumber(currentOperator(calcFunctionValue));
+				storeCurrentOperator(calcFunctionValue);
+				storeNumber(display.innerText);
 			}
 		}
 	});

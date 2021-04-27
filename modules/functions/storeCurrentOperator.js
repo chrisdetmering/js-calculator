@@ -1,4 +1,5 @@
+export let currentOperand = null;
+
 export const storeCurrentOperator = operand => {
-	let currentOperand = operand;
-	return currentOperand;
+	currentOperand = operand;
 };

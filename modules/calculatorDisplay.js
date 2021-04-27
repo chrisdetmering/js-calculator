@@ -1,8 +1,10 @@
-import { numberStorageArray } from './functions/numberStorageArray.js';
+import { numberStorageArray } from './functions/functions.js';
 
 export const display = document.getElementById('calc-display');
 
-export const resetDisplay = () => (display.innerText = '0');
+export const resetDisplay = () => {
+	display.innerText = '0';
+};
 
 export const displayUserInputNumbers = e => {
 	const numberButtonValue = e.target.textContent;
