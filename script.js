@@ -22,7 +22,6 @@ document.querySelectorAll('#number-button-container').forEach(button => {
 document.querySelectorAll('#math-operands-container').forEach(button => {
 	button.addEventListener('click', e => {
 		e.preventDefault();
-		debugger;
 
 		if (e.target.value !== undefined) {
 			const calcFunctionValue = e.target.textContent;
